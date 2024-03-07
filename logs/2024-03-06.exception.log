@@ -1,0 +1,14 @@
+2024-03-06 20:23:09 [Winston 연습 어플리케이션] error: uncaughtException: Logmiddleware is not defined
+ReferenceError: Logmiddleware is not defined
+    at file:///C:/Users/jhcho/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/sparta/main_course/0305_week4_hw/middlewares/log.middleware.js:69:16
+    at ModuleJob.run (node:internal/modules/esm/module_job:218:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:329:24)
+    at async loadESM (node:internal/process/esm_loader:28:7)
+    at async handleMainPromise (node:internal/modules/run_main:113:12)
+2024-03-06 20:23:15 [Winston 연습 어플리케이션] error: uncaughtException: Logmiddleware is not defined
+ReferenceError: Logmiddleware is not defined
+    at file:///C:/Users/jhcho/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/sparta/main_course/0305_week4_hw/middlewares/log.middleware.js:69:16
+    at ModuleJob.run (node:internal/modules/esm/module_job:218:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:329:24)
+    at async loadESM (node:internal/process/esm_loader:28:7)
+    at async handleMainPromise (node:internal/modules/run_main:113:12)

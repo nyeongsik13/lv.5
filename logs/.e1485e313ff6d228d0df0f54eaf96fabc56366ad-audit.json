@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\jhcho\\OneDrive\\바탕 화면\\sparta\\main_course\\0305_week4_hw\\logs\\.e1485e313ff6d228d0df0f54eaf96fabc56366ad-audit.json",
+    "files": [
+        {
+            "date": 1709724189181,
+            "name": "C:\\Users\\jhcho\\OneDrive\\바탕 화면\\sparta\\main_course\\0305_week4_hw\\logs\\2024-03-06.exception.log",
+            "hash": "f0f1fdef22f4e65487336bcb9366909e1cf5821c5c577529752ad52c23448d29"
+        }
+    ],
+    "hashType": "sha256"
+}
