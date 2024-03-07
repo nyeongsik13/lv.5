@@ -30,15 +30,18 @@ router.post("/orders", authenticate, userinfo, async (req, res, next) => {
       data: { quantity: menu.quantity - quantity },
     });
 
-    if(menu.quantity == 0){
+    // 메뉴 수량 업데이트
+    const updatedMenu = await prisma.menus.update({
+      where: { menuId: menuId },
+      data: { quantity: menu.quantity - quantity },
+    });
+
+    // 메뉴가 매진된 경우 상태 업데이트
+    if(updatedMenu.quantity === 0) {
       await prisma.menus.update({
-        where:{
-          menuId : menu.menuId,
-        },
-        data:{
-          status: "SOLD_OUT",
-        }
-      })
+        where: { menuId: menuId },
+        data: { status: "SOLD_OUT" },
+      });
     }
 
     // 주문 생성
@@ -60,16 +63,12 @@ router.post("/orders", authenticate, userinfo, async (req, res, next) => {
 });
 
 // 주문 내역 조회 (소비자)
-router.get(
-  "/orders/customer",
-  authenticate,
-  userinfo,
-  async (req, res, next) => {
+router.get("/orders/customer",authenticate,userinfo,async (req, res, next) => {
     const orders = await prisma.orders.findMany({
       select: {
         menuId: true,
         quantity: true,
-        status: true,
+        OrderType: true,
         createdAt: true,
       },
       where: {
@@ -100,24 +99,21 @@ router.get("/orders/owner", authenticate, authorize, async (req, res, next) => {
       price: order.menu.price,
     },
     quantity: order.quantity,
-    status: order.status,
+    OrderType: order.OrderType,
     createdAt: order.createdAt.toISOString(),
     totalPrice: order.totalPrice,
   }));
+  return res.status(200).json({ data: responseData });
 });
 
 // 주문 내역 상태 변경 (PATCH)
-router.patch(
-  "/orders/:orderId/status",
-  authenticate,
-  authorize,
-  async (req, res, next) => {
+router.patch( "/orders/:orderId/status",authenticate,authorize,async (req, res, next) => {
     const { orderId } = req.params;
-    const { status } = req.body;
+    const { OrderType } = req.body;
 
     await prisma.orders.update({
       where: { OrderId: +orderId },
-      data: { status },
+      data: { OrderType },
     });
     return res.status(200).json({ message: "주문 내역을 수정하였습니다." });
   }

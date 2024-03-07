@@ -1,0 +1,56 @@
+2024-03-07 17:20:09 [Winston 연습 어플리케이션] error: uncaughtException: 
+[31mInvalid [1m`prisma.orders.findMany()`[22m invocation:[39m
+
+{
+  select: {
+    menuId: true,
+    quantity: true,
+    [31mstatus[39m: true,
+    [31m~~~~~~[39m
+    createdAt: true,
+[32m?[39m   [32mOrderId[39m[32m?[39m[32m: [39m[32mtrue[39m,
+[32m?[39m   [32muserId[39m[32m?[39m[32m: [39m[32mtrue[39m,
+[32m?[39m   [32mnickname[39m[32m?[39m[32m: [39m[32mtrue[39m,
+[32m?[39m   [32mOrderType[39m[32m?[39m[32m: [39m[32mtrue[39m,
+[32m?[39m   [32mtotalPrice[39m[32m?[39m[32m: [39m[32mtrue[39m,
+[32m?[39m   [32mdeletedAt[39m[32m?[39m[32m: [39m[32mtrue[39m,
+[32m?[39m   [32mmenu[39m[32m?[39m[32m: [39m[32mtrue[39m,
+[32m?[39m   [32muser[39m[32m?[39m[32m: [39m[32mtrue[39m
+  },
+  where: {
+    userId: 3
+  }
+}
+
+Unknown field [31m`status`[39m for [1mselect[22m statement on model [1m`Orders`[22m. Available options are listed in [32mgreen[39m.
+PrismaClientValidationError: 
+[31mInvalid [1m`prisma.orders.findMany()`[22m invocation:[39m
+
+{
+  select: {
+    menuId: true,
+    quantity: true,
+    [31mstatus[39m: true,
+    [31m~~~~~~[39m
+    createdAt: true,
+[32m?[39m   [32mOrderId[39m[32m?[39m[32m: [39m[32mtrue[39m,
+[32m?[39m   [32muserId[39m[32m?[39m[32m: [39m[32mtrue[39m,
+[32m?[39m   [32mnickname[39m[32m?[39m[32m: [39m[32mtrue[39m,
+[32m?[39m   [32mOrderType[39m[32m?[39m[32m: [39m[32mtrue[39m,
+[32m?[39m   [32mtotalPrice[39m[32m?[39m[32m: [39m[32mtrue[39m,
+[32m?[39m   [32mdeletedAt[39m[32m?[39m[32m: [39m[32mtrue[39m,
+[32m?[39m   [32mmenu[39m[32m?[39m[32m: [39m[32mtrue[39m,
+[32m?[39m   [32muser[39m[32m?[39m[32m: [39m[32mtrue[39m
+  },
+  where: {
+    userId: 3
+  }
+}
+
+Unknown field [31m`status`[39m for [1mselect[22m statement on model [1m`Orders`[22m. Available options are listed in [32mgreen[39m.
+    at Cn (C:\Users\fly01\OneDrive\바탕 화면\sparta\node\nodejslv5\lv.5\node_modules\@prisma\client\runtime\library.js:116:5888)
+    at _n.handleRequestError (C:\Users\fly01\OneDrive\바탕 화면\sparta\node\nodejslv5\lv.5\node_modules\@prisma\client\runtime\library.js:123:6510)
+    at _n.handleAndLogRequestError (C:\Users\fly01\OneDrive\바탕 화면\sparta\node\nodejslv5\lv.5\node_modules\@prisma\client\runtime\library.js:123:6188)
+    at _n.request (C:\Users\fly01\OneDrive\바탕 화면\sparta\node\nodejslv5\lv.5\node_modules\@prisma\client\runtime\library.js:123:5896)
+    at async l (C:\Users\fly01\OneDrive\바탕 화면\sparta\node\nodejslv5\lv.5\node_modules\@prisma\client\runtime\library.js:128:10871)
+    at async file:///C:/Users/fly01/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/sparta/node/nodejslv5/lv.5/src/routes/orders.router.js:68:20

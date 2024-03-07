@@ -18,6 +18,7 @@ router.post("/", async (req, res, next) => {
       {
         userId: user.userId,
         usertype: user.usertype,
+        nickname: user.nickname,
       },
       process.env.JWT_SECRET,
       { expiresIn: "1d" }

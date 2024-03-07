@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\fly01\\OneDrive\\바탕 화면\\sparta\\node\\nodejslv5\\lv.5\\logs\\error\\.a72f782caef8cc14d5b795a55b48c79bb60a3efd-audit.json",
+    "files": [
+        {
+            "date": 1709796605262,
+            "name": "C:\\Users\\fly01\\OneDrive\\바탕 화면\\sparta\\node\\nodejslv5\\lv.5\\logs\\error\\2024-03-07.error.log",
+            "hash": "3ea99f0145939762948f5b0dff9cf560874407db677ed8ad39e44a457c9e0b8d"
+        }
+    ],
+    "hashType": "sha256"
+}

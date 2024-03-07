@@ -117,7 +117,7 @@ router.get('/categories/:categoryId/menus/:menuId', async (req, res) => {
 router.patch('/categories/:categoryId/menus/:menuId', authenticate, authorize, async (req, res, next) => {
     try {
         const { categoryId, menuId } = req.params;
-        const { name, description, image, price, order, status } = req.body;
+        const { name, description, image, price, order, status, quantity } = req.body;
 
         if (price <= 0) {
             return res.status(400).json({ message: "메뉴 가격은 0보다 작을 수 없습니다." });
@@ -125,7 +125,7 @@ router.patch('/categories/:categoryId/menus/:menuId', authenticate, authorize, a
 
         const menuExists = await prisma.menus.findUnique({
             where: {
-                id: +menuId,
+                menuId: +menuId,
                 deletedAt: null,
             },
         });
@@ -136,7 +136,7 @@ router.patch('/categories/:categoryId/menus/:menuId', authenticate, authorize, a
 
         const updatedMenu = await prisma.menus.update({
             where: {
-                id: +menuId,
+                menuId: +menuId,
                 deletedAt: null,
             },
             data: {
@@ -163,7 +163,7 @@ router.delete('/categories/:categoryId/menus/:menuId', authenticate, authorize, 
 
         const menuExists = await prisma.menus.findUnique({
             where: {
-                id: +menuId,
+                menuId: +menuId,
             },
         });
 
@@ -173,7 +173,7 @@ router.delete('/categories/:categoryId/menus/:menuId', authenticate, authorize, 
 
         await prisma.menus.update({
             where: {
-                id: +menuId,
+                menuId: +menuId,
             },data:{
                 deletedAt: new Date(),
             }

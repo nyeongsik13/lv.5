@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\fly01\\OneDrive\\바탕 화면\\sparta\\node\\nodejslv5\\lv.5\\logs\\.5625f3558ffa6c2f8b10c4ba9fb51590d36c01bf-audit.json",
+    "files": [
+        {
+            "date": 1709796605258,
+            "name": "C:\\Users\\fly01\\OneDrive\\바탕 화면\\sparta\\node\\nodejslv5\\lv.5\\logs\\2024-03-07.log",
+            "hash": "4ff86d54fb749d81acd60043f8e5bcf3d52f1bec1d32d7d9f8421492c9c453a4"
+        }
+    ],
+    "hashType": "sha256"
+}
